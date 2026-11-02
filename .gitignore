@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment Variables
+.env
+*/.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production build artifacts
+dist/
+build/
+*/dist/
+
+# Audio / Media files (Protect against copyrighted MP3 uploads)
+*.mp3
+*.wav
+*.flac
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
