@@ -121,7 +121,6 @@ Spotify-Clone/
 │   ├── .env                     # Frontend environment variables
 │   ├── .env.example             # Frontend environment template
 │   ├── package.json             # Frontend dependencies and scripts
-│   ├── vercel.json              # Vercel SPA client rewrite configuration
 │   └── vite.config.js           # Vite config (Port 3000)
 │
 ├── .gitignore                   # Root gitignore rules
@@ -258,22 +257,21 @@ flowchart LR
 
 ---
 
-### 3. Frontend Deployment: Vercel
+### 3. Frontend Deployment: Netlify
 
-#### Using [Vercel](https://vercel.com/):
-1. Sign in to Vercel and click **Add New...** ➔ **Project**.
-2. Import your GitHub repository.
-3. In project settings:
-   - **Framework Preset**: `Vite`
-   - **Root Directory**: `frontend`
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-4. Expand **Environment Variables** and add:
-   - `VITE_API_URL` = `https://spotify-clone-backend.onrender.com` *(Replace with your live backend URL from step 2)*
-5. Click **Deploy**.
-6. When deployment finishes, your Spotify Clone is live worldwide! 🎉
+#### Using [Netlify](https://www.netlify.com/):
+1. Sign in to Netlify and click **Add new site** ➔ **Import an existing project**.
+2. Connect your GitHub account and select this repository.
+3. In site configuration:
+   - **Base directory**: `frontend`
+   - **Build command**: `npm run build`
+   - **Publish directory**: `dist`
+4. Go to **Site configuration** ➔ **Environment variables** ➔ **Add variable**:
+   - `VITE_API_URL` = `https://spotify-clone-backend.onrender.com` *(Step 2 se mila hua live backend URL)*
+5. Click **Deploy Spotify Clone**.
+6. Deployment complete hote hi aapka app live ho jayega! 🎉
 
-> **Note:** The included `frontend/vercel.json` already contains rewrite rules so React Router routes like `/login` and `/signup` work seamlessly without 404 errors on browser reload.
+> **Note:** Client-side routing ke liye Netlify standard `frontend/public/_redirects` file automatically use karta hai taaki `/login` ya `/signup` page refresh karne par 404 error na aaye.
 
 ---
 
